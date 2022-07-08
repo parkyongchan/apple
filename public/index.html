@@ -13,20 +13,28 @@
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Pricing</a>
-            <a class="nav-link disabled">Disabled</a>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -37,12 +45,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
     <script>
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from 'firebase/app';
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-
-      // Your web app's Firebase configuration
       const firebaseConfig = {
         apiKey: 'AIzaSyB80JXTvVcJmRyF_sJE__USwZ84NnIr1-Q',
         authDomain: 'apple-code-7cdcb.firebaseapp.com',
@@ -52,8 +54,17 @@
         appId: '1:580956135569:web:6542723536198e18f65f30',
       };
 
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
+      firebase.initializeApp(firebaseConfig);
+    </script>
+<script>
+  const db = firebase.firestore();
+  db.collection('product').get().then((결과)=>{
+    결과.forEach((doc)=>{
+      console.log(doc.data())
+    })
+  })
+
+</script>
     </script>
   </body>
 </html>
