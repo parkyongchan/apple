@@ -6,10 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <link rel="stylesheet" href="main.css" />
   <body>
-    
-<script>
-     
+    <div class="alert-box" id="alert">
+      <p id="title">알림창임</p>
+      <!-- <button onclick="알림창열기('none');">닫기</button> -->
+      <button id="close">닫기</button>
+    </div>
+
+    <button onclick="아이디('아이디를입력하셈')">버튼1</button>
+    <button onclick="아이디('비번입력하셈')">버튼2</button>
+
+    <script>
+      function 아이디(ㅌ) {
+        document.querySelector('#title').innerHTML = ㅌ;
+        document.querySelector('#alert').style.display = 'block';
+      }
+      function 알림창열기(구멍) {
+        document.querySelector('#alert').style.display = 구멍;
+      }
+      function 아이디1() {
+        document.querySelector('#title').innerHTML = '비번입력하세요';
+        document.querySelector('#alert').style.display = 'block';
+      }
+
+      document.querySelector('#close').addEventListener('click', function () {
+        document.querySelector('#alert').style.display = 'none';
+      });
     </script>
   </body>
 </html>
