@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-
+    <button><span class="badge bg-dark">Dark 🔄</span></button>
     <script src="jquery/jquery-3.6.0.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script>
@@ -58,19 +58,80 @@
       $('#close').on('click', function () {
         $('.black-bg').removeClass('show-modal');
       });
-      $('.navbar-toggler').on('click', function () {
-        $('.list-group').toggleClass('show');
+      // $('.navbar-toggler').on('click', function () {
+      //   $('.list-group').toggleClass('show');
+      // });
+      // $('#send').on('click', function (e) {
+      //   if ($('#email').val() == '') {
+      //     e.preventDefault();
+      //     alert('아이디입력하세요');
+      //   }
+      //   if ($('#pass').val() == '') {
+      //     e.preventDefault();
+      //     alert('비번입력하세요');
+      //   } else if ($('#pass').val().length < 6) {
+      //     alert('비번6자리 이상으로 하세요');
+      //     e.preventDefault();
+      //   }
+      // });
+
+      $('#email').on('change', function () {
+        console.log('안녕');
       });
-      $('#send').on('click', function (e) {
-        if ($('#email').val() == '') {
-          e.preventDefault();
-          alert('아이디입력하세요');
+    </script>
+    <script>
+      var a;
+      function 삼육구게임(a) {
+        if (a % 9 == 0) {
+          console.log('박수3');
+        } else if (a % 3 == 0) {
+          console.log('박수');
+        } else console.log('통과');
+      }
+    </script>
+    <script>
+      var a;
+      var b;
+      function 합격했냐(a, b) {
+        if (a < 40) {
+          console.log('탈락');
+        } else if (b < 40) {
+          console.log('탈락');
+        } else if (a + b > 120) {
+          console.log('통과');
+          ('');
+        } else {
+          console.log('탈락');
         }
-        if ($('#pass').val() == '') {
-          e.preventDefault();
-          alert('비번입력하세요');
+      }
+    </script>
+    <script>
+      var count = 0;
+      count++;
+      // console.log(count);
+      $('.badge').on('click', function () {
+        count++;
+        if (count % 2 == 1) {
+          $('.badge').html('light');
+        } else {
+          $('.badge').html('Dark');
         }
       });
+    </script>
+    <script>
+      var name = 'park';
+      var id = 0;
+      function showName() {
+        var name = 'kim';
+        var id = 1;
+
+        console.log(name);
+        // showName();
+      }
+      showName();
+      // showName();
+      // console.log(id);
+      console.log(name);
     </script>
   </body>
 </html>
